@@ -39,9 +39,7 @@ b. If The T-OFF Point is directed by the DB (Distribution Box)so to illustrate t
 5. Lines:
 Generation: Each Region (NR, SR, WR, ER and NER) has dedicated Generation node which is being connected to one Main Generation node and this Main Generation Node will have the membership to all Transco's.
 The lines were a bit of the complicated class to implement in the model, the main problem was finding the equivalent TRX line between two grids being that in our network there is mostly mixed conductor use for example to join ITPO Grid to Exhibition Grid ,5 km length of conductor is used out of which 2 km is 3x400mm2 XLPE cable and 3 km is ACSR GOAT conductor.
-
 For finding Equivalent Line following methodology is used:
-
 a. Let assume we have 2 Conductors being C1 and C2
 i. For C1: Resistance =R1, Reactance =X1, Ampacity=A1 ii. For C2: Resistance =R2, Reactance =X2, Ampacity=A2
 For finding Max Flow: (PF is taken as 1 after analysis)
