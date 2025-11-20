@@ -1,6 +1,6 @@
 # Plexos
-This Repo contains all the necessary files of BRPL Plexos Model 
-![Plexos Workflow](BRPL%20Plexos%20workflow.png)
+This Repo contains all the necessary files of BRPL Plexos Model and this Read Me tell about what was the thinking process about behind whole model.
+
 Model Structure Overview.
 1. Generators:
 In Generator Class for each Region (ie: NR, SR, WR, ER and NER) there will be separate generator which then further connected to respective Generation Node (NR Generation, SR Generation, WR Generation, ER Generation and NER Generation).
@@ -35,3 +35,4 @@ a. If the T-OFF point was directed by Grid means for example Line 220kV Okhla To
         2) 220kV Okhla To DTC Central Workshop (Okhla Ph-l Grid-DTC
 WORKSHOP)
 b. If The T-OFF Point is directed by the DB (Distribution Box)so to illustrate that , Toff point nodes are created.
+![Plexos Workflow](BRPL%20Plexos%20workflow.png)
