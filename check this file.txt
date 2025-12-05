@@ -1,0 +1,5672 @@
+rosoft Windows [Version 10.0.26100.6905]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\plexos>pxc study --help
+CloudCLI.Commands.Study.StudyCommand
+
+Manage studies
+
+Usage: plexos-cloud study [command] [options]
+
+Options:
+  -f|--format          Output format(json | csv | tsv | yaml | table | none)
+                       Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                       Default value is: JSON.
+  -q|--quiet           Turns off verbose messages from app
+  -aut|--automation    Turns on developer friendly structured response messages from app
+                       Allowed values are: None, PythonSDK.
+  -?|-h|--help         Show help information.
+
+Commands:
+  archive              Archive the given Study
+  change-owner         Changes the owner of a study (Admin only)
+  changeset            Commands dealing with a study's changeset
+  clone                Downloads and initializes a tracked study from the cloud
+  create               Creates a study from input project file
+  delete               Delete the given study from PLEXOS Cloud. (**this is permanent and cannot be undone.)
+  delete-local         Deletes local study files
+  find                 Find the Study by name
+  grant-user-access    Grants user access to a study
+  list                 List studies
+  list-local           List local studies that are tracked on the cloud
+  list-local-studyIDs  Lists PLEXOS Cloud study IDs currently attached to a local study directory
+  repair-local         Attempts to repair the cloud sync of a local study when data has been corrupted or study gets
+                       moved
+  reset                Reset study on local to latest version on cloud
+  settings             Manage studies settings
+  stats                Commands dealing with a study's statistical information
+  unarchive            Unarchive the given Study
+  upgrade              Upgrade or downgrade a study to a specified engine version.
+  validate             Validate data for study creation
+
+Run 'study [command] -?|-h|--help' for more information about a command.
+
+
+C:\Users\plexos>pxc simulation --help
+CloudCLI.Commands.Simulation.SimulationCommand
+
+Manage simulations
+
+Usage: plexos-cloud simulation [command] [options]
+
+Options:
+  -f|--format                  Output format(json | csv | tsv | yaml | table | none)
+                               Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                               Default value is: JSON.
+  -q|--quiet                   Turns off verbose messages from app
+  -aut|--automation            Turns on developer friendly structured response messages from app
+                               Allowed values are: None, PythonSDK.
+  -?|-h|--help                 Show help information.
+
+Commands:
+  build-request-from-previous  build simulation request based on previously ran simulation
+  cancel                       Cancel Simulation request
+  capability                   Manage capabilities
+  engine                       Manage engines
+  enqueue                      Using top-level command with --file option will enable enqueuing simulations from a JSON
+                               file. Subcommands (Early Access) manages enqueuing different types of simulations
+  list                         List simulations
+  monitor                      Monitor Simulations while they are running, i.e. in progress state
+  progress                     Check Simulation progress
+  run-group                    Runs the simulation group.
+
+Run 'simulation [command] -?|-h|--help' for more information about a command.
+
+
+C:\Users\plexos>plexos-cloud simulation enqueue --file "C:\Users\plexos\Desktop\API Automation\plexos_study_details_Plexos_BRPL_datafile changed_sushant.json"
+Could not enqueue simulation
+
+C:\Users\plexos>plexos-cloud simulation list
+[
+  {
+    "SimulationType": "None",
+    "Id": "baa9fc81-b2bc-48a6-b0a1-a1ced5d622b7",
+    "ExecutionId": "1340806c-7ad5-4d70-a159-3b8203d814b9",
+    "StudyId": "4e03c4c5-6149-4c0e-8377-95388cd12ad6",
+    "ChangeSetId": "8f1d374b-cd1e-4f9f-b1c4-e861c9561831",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-09-30T09:28:53.2906844+00:00",
+    "LastUpdatedAt": "2025-09-30T09:32:32.4085305+00:00",
+    "Models": [
+      "Oct-25 with TAM purchase"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "6283472b-5c28-4eb4-b0c7-39bd979a8f72",
+        "Name": "Model Oct-25 with TAM purchase Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1bcedf15-22c2-4992-8cd6-1c2293d57eef",
+    "ExecutionId": "1847df1d-c667-44f7-8210-e06c7f2b56c0",
+    "StudyId": "81786c11-4aaf-49b7-ad64-d85cc55b0bf6",
+    "ChangeSetId": "82c90068-1b5f-4b4a-9ccb-cd0948ab1746",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-01T13:03:57.9589408+00:00",
+    "LastUpdatedAt": "2025-10-01T13:41:55.1352399+00:00",
+    "Models": [
+      "Dispatch Run -  1 sample.600 MW BESS"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [
+      {
+        "Id": "51596101-4680-4569-899f-a9b49503a717",
+        "Name": "Model Dispatch Run -  1 sample.600 MW BESS Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "9c7a6cd2-e7cd-4847-8dca-9ba58f21fa6e",
+    "ExecutionId": "82be991e-531d-4e4a-934a-b03f329621b7",
+    "StudyId": "81786c11-4aaf-49b7-ad64-d85cc55b0bf6",
+    "ChangeSetId": "82c90068-1b5f-4b4a-9ccb-cd0948ab1746",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-10-01T13:40:51.6690326+00:00",
+    "LastUpdatedAt": "2025-10-01T14:11:18.9083957+00:00",
+    "Models": [
+      "Dispatch Run -  1 sample.600 MW BESS"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1d5d5aff-f02b-409a-95bb-7f5267c197f4",
+    "ExecutionId": "aae007e6-0afa-4c82-bcc9-39afb42f0eec",
+    "StudyId": "81786c11-4aaf-49b7-ad64-d85cc55b0bf6",
+    "ChangeSetId": "7f4cc1e5-a030-45dc-9132-d95a6be89628",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-10-06T06:59:54.2372913+00:00",
+    "LastUpdatedAt": "2025-10-06T09:18:31.8661553+00:00",
+    "Models": [
+      "Dispatch Run -1 sample.charged battery summer FY30.31.cooling Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "dd4d9009-24b5-445e-8256-7b57bf04ad29",
+        "Name": "Model Dispatch Run -1 sample.charged battery summer FY30.31.cooling Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "a82338e9-0bbb-4568-824f-8236c3780c9d",
+    "ExecutionId": "7fa29024-cbc8-4263-a88d-7be99e934dc2",
+    "StudyId": "81786c11-4aaf-49b7-ad64-d85cc55b0bf6",
+    "ChangeSetId": "a1e5bb2e-840a-41aa-9585-7101ce7f7cc0",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-10-08T09:34:33.6519815+00:00",
+    "LastUpdatedAt": "2025-10-08T11:42:29.7848539+00:00",
+    "Models": [
+      "Dispatch Run -1 sample.charged battery summer FY30.31.cooling"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "356dd76f-e835-4583-b73b-be737820830b",
+        "Name": "Model Dispatch Run -1 sample.charged battery summer FY30.31.cooling Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "47244665-60a2-424d-848b-52f7cbd6102e",
+    "ExecutionId": "699edcb7-700f-44ac-a5c8-ef3832cafdcb",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "32ec0948-14ea-45cc-9284-37c760f53283",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-08T18:52:12.9350088+00:00",
+    "LastUpdatedAt": "2025-10-08T19:03:21.3781599+00:00",
+    "Models": [
+      "Charged battery summer FY27"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "ddfc94df-12a9-4351-809b-9f83de24baa0",
+        "Name": "Model Charged battery summer FY27 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "88bc42e6-6224-4944-a85f-1995444bf42e",
+    "ExecutionId": "8e4d1076-d83d-4993-8904-6daa6c0eacda",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "32ec0948-14ea-45cc-9284-37c760f53283",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-08T18:52:32.3075244+00:00",
+    "LastUpdatedAt": "2025-10-08T19:03:30.6336601+00:00",
+    "Models": [
+      "Charged battery summer FY28"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "b457bbe7-31bb-4194-88a5-c6ed6e85106f",
+        "Name": "Model Charged battery summer FY28 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "db13cf1d-71cc-4eaa-a0d2-8c60dc40e99c",
+    "ExecutionId": "3d4938ec-1ae2-4bf0-be81-80d6e8c0ec95",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "32ec0948-14ea-45cc-9284-37c760f53283",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-08T18:52:41.1225114+00:00",
+    "LastUpdatedAt": "2025-10-08T19:58:53.42366+00:00",
+    "Models": [
+      "Charged battery summer FY29"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "f1d502cf-f8bf-4329-bad7-8c3aa6bcb9f4",
+        "Name": "Model Charged battery summer FY29 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "4e26862d-874f-4d4d-b67f-b335a83d09dd",
+    "ExecutionId": "95f41a13-2c7b-4674-bf8f-309ce20ad833",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "32ec0948-14ea-45cc-9284-37c760f53283",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-08T18:52:50.6754003+00:00",
+    "LastUpdatedAt": "2025-10-08T20:15:53.1518602+00:00",
+    "Models": [
+      "Charged battery summer FY30"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "bdfbc595-1b9c-4c8d-b80e-26f513273d66",
+        "Name": "Model Charged battery summer FY30 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "d06beb5f-d05f-4c20-8cb8-65712ceb8906",
+    "ExecutionId": "8849d853-c805-4b4e-b346-1f876651d2ff",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "32ec0948-14ea-45cc-9284-37c760f53283",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-08T18:53:00.1254561+00:00",
+    "LastUpdatedAt": "2025-10-08T20:00:58.5399564+00:00",
+    "Models": [
+      "Charged battery summer FY31"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "2b85d76e-3fb8-4044-8204-e6d461d1d4b5",
+        "Name": "Model Charged battery summer FY31 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "d87faa05-2267-4951-817b-13084373626f",
+    "ExecutionId": "818a5870-8314-4f93-a5e1-69b45a311dd4",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "3cb3cb54-7316-492a-b32f-e1f981384093",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:22:02.3600681+00:00",
+    "LastUpdatedAt": "2025-10-09T02:23:16.8632147+00:00",
+    "Models": [
+      "Charged battery summer FY27"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "b03174b8-0a7c-4162-b626-726d5fcfbff8",
+    "ExecutionId": "fc6e7877-2e64-405a-a325-2c27b28dcb7f",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "3cb3cb54-7316-492a-b32f-e1f981384093",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:22:17.0926672+00:00",
+    "LastUpdatedAt": "2025-10-09T02:23:13.3700453+00:00",
+    "Models": [
+      "Charged battery summer FY28"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1688a9e7-7184-4666-9c1a-7888108aaace",
+    "ExecutionId": "b3a52929-a582-402c-8561-1ddfcda7bb93",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "3cb3cb54-7316-492a-b32f-e1f981384093",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:22:24.9185289+00:00",
+    "LastUpdatedAt": "2025-10-09T02:23:09.8392376+00:00",
+    "Models": [
+      "Charged battery summer FY29"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "44a898e5-fea9-44b0-9eb1-4c7f267384f3",
+    "ExecutionId": "790c639c-aeba-4c3a-9978-92a2d5e03efa",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "3cb3cb54-7316-492a-b32f-e1f981384093",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:22:30.2443954+00:00",
+    "LastUpdatedAt": "2025-10-09T02:23:02.4081196+00:00",
+    "Models": [
+      "Charged battery summer FY30"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "f26d9649-275a-4899-9662-ca4fcd3a170b",
+    "ExecutionId": "e26ac699-3d81-4eb2-ac8f-0e27ec29face",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "798b0eae-8909-40e6-9123-df8b462c893f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:27:37.6317779+00:00",
+    "LastUpdatedAt": "2025-10-09T02:40:02.4930088+00:00",
+    "Models": [
+      "Charged battery summer FY27"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "32f2bbea-6b00-4c9b-af13-43a1fcbc7a7f",
+        "Name": "Model Charged battery summer FY27 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "c4da5dcb-81e4-4810-9c1c-402c1a9582c1",
+    "ExecutionId": "4f077d4b-f7b5-4d0a-b5f8-a812c997b3ca",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "798b0eae-8909-40e6-9123-df8b462c893f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:28:17.4399069+00:00",
+    "LastUpdatedAt": "2025-10-09T02:40:43.5411084+00:00",
+    "Models": [
+      "Charged battery summer FY28"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "cffd7a58-441d-4d69-8af9-65600bcdab0c",
+        "Name": "Model Charged battery summer FY28 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "a766dade-6354-41dc-9b96-7756d7934adc",
+    "ExecutionId": "eae42c73-277f-4bd3-beb5-7f40f385f156",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "798b0eae-8909-40e6-9123-df8b462c893f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:28:25.0611224+00:00",
+    "LastUpdatedAt": "2025-10-09T03:31:10.6601648+00:00",
+    "Models": [
+      "Charged battery summer FY29"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "5bc713f6-b2d7-49cd-8ae4-8b391ffac635",
+        "Name": "Model Charged battery summer FY29 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "344f1371-6ad4-4c89-8d5a-793bbfae6ae4",
+    "ExecutionId": "553c5deb-381d-4de8-afb3-9185ba6d6764",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "798b0eae-8909-40e6-9123-df8b462c893f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:28:30.6079589+00:00",
+    "LastUpdatedAt": "2025-10-09T03:47:34.2280949+00:00",
+    "Models": [
+      "Charged battery summer FY30"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "882ab614-0973-42c2-9418-884d1392bfe1",
+        "Name": "Model Charged battery summer FY30 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "2bd15adb-95de-4c3f-8be6-651d0a8e9f7f",
+    "ExecutionId": "8f2f84bd-123b-4bdb-823b-212953db947d",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "798b0eae-8909-40e6-9123-df8b462c893f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-09T02:49:15.1436152+00:00",
+    "LastUpdatedAt": "2025-10-09T03:52:17.5742316+00:00",
+    "Models": [
+      "Charged battery summer FY31"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "8777a87f-a7b9-4fb7-a6b7-22a2060bbf1c",
+        "Name": "Model Charged battery summer FY31 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "d6ae5172-59e8-44d3-9b93-8ddcac27e6e9",
+    "ExecutionId": "0a8318d6-4a5b-484f-85a9-fe1d8553d5eb",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:42:34.6692313+00:00",
+    "LastUpdatedAt": "2025-10-28T09:45:41.715707+00:00",
+    "Models": [
+      "Charged battery summer FY27"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "9f15177c-2a62-4e4e-81b0-bdd202f7e9af",
+    "ExecutionId": "68fb4efd-4c92-4a8a-91c6-f11b7cd329ec",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:42:43.659916+00:00",
+    "LastUpdatedAt": "2025-10-28T09:46:17.8972645+00:00",
+    "Models": [
+      "Charged battery summer FY28"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "3cfd28b6-b06e-4b96-9b26-775c8bbd1169",
+    "ExecutionId": "e3d0a6a2-c2df-4593-b31f-e8b37d69dbc1",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:42:53.3027358+00:00",
+    "LastUpdatedAt": "2025-10-28T09:46:28.2146434+00:00",
+    "Models": [
+      "Charged battery summer FY29"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "87ff2455-99e7-4120-9826-44abf854ccf4",
+    "ExecutionId": "de61892c-4101-44e9-98ea-602710892ba0",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:43:03.6067303+00:00",
+    "LastUpdatedAt": "2025-10-28T09:46:45.4519807+00:00",
+    "Models": [
+      "Charged battery summer FY30"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "6a2e357a-c92d-49af-b62c-d5770bbd7234",
+    "ExecutionId": "24d8bb8b-531b-4a7b-8436-aa27f382992f",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:43:15.8306017+00:00",
+    "LastUpdatedAt": "2025-10-28T09:46:36.173874+00:00",
+    "Models": [
+      "Charged battery summer FY31"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "45663a36-bf1f-4c03-9122-8781964e70d4",
+    "ExecutionId": "b19a228c-a097-4ee4-b7b3-a0e01c8eddcd",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:43:36.5890164+00:00",
+    "LastUpdatedAt": "2025-10-28T09:47:07.4372696+00:00",
+    "Models": [
+      "Charged battery summer FY30 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "a51f15ba-7007-4789-9932-3390291afcd8",
+    "ExecutionId": "5e0f037b-ce75-40b3-8063-8e9b0eb0d9e3",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:43:46.8016095+00:00",
+    "LastUpdatedAt": "2025-10-28T09:46:59.5626312+00:00",
+    "Models": [
+      "Charged battery summer FY31 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "d7d1be88-4117-44e3-a828-e29f27ec73a7",
+    "ExecutionId": "937e14ac-a2d4-4ee7-9a8b-44213259aa98",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:43:53.8856548+00:00",
+    "LastUpdatedAt": "2025-10-28T09:48:17.8690248+00:00",
+    "Models": [
+      "Standalone battery FY30 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "716ad993-0dc5-452a-8586-fd8ea98c4050",
+    "ExecutionId": "a2aa6a72-771c-40cc-8edb-916ab2a66022",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:45:02.8523676+00:00",
+    "LastUpdatedAt": "2025-10-28T09:45:21.6771772+00:00",
+    "Models": [
+      "Charged battery summer FY27"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5213f668-5700-466a-ad58-a3441da0b147",
+    "ExecutionId": "e3a8db6b-6570-46dc-a5d8-90c838c9fb26",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:45:13.3637967+00:00",
+    "LastUpdatedAt": "2025-10-28T09:45:30.351847+00:00",
+    "Models": [
+      "Charged battery summer FY28"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "84021bea-717f-4b0b-b8dc-4165603ff098",
+    "ExecutionId": "b1a6010d-fd2b-463b-a3be-18124f00a986",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:45:23.5099387+00:00",
+    "LastUpdatedAt": "2025-10-28T09:45:49.4327131+00:00",
+    "Models": [
+      "Charged battery summer FY29"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "f41452a0-cb84-4447-a0a6-87580cd8dc8c",
+    "ExecutionId": "b8cce4b3-0e8a-45a8-9e97-7c4d6a4765ca",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:45:33.3104419+00:00",
+    "LastUpdatedAt": "2025-10-28T09:45:55.0368743+00:00",
+    "Models": [
+      "Charged battery summer FY30"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "8b47d7ca-c8ef-4c57-ab70-a7c4c9eec190",
+    "ExecutionId": "bd5e9334-8d8b-401b-8db0-6bc683fa4e8e",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:45:43.3816027+00:00",
+    "LastUpdatedAt": "2025-10-28T09:46:07.5242845+00:00",
+    "Models": [
+      "Charged battery summer FY31"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "ba2b7554-4985-4a70-8be8-a185c338a30e",
+    "ExecutionId": "0c63fe1e-4364-4315-8128-a73324a8005c",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:46:02.3074971+00:00",
+    "LastUpdatedAt": "2025-10-28T09:47:26.1961998+00:00",
+    "Models": [
+      "Charged battery summer FY30 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "79d351d4-ba7f-486e-9534-00818872569a",
+    "ExecutionId": "e06cc475-4963-4f39-bfc7-c142c4c6e13b",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:46:11.7869096+00:00",
+    "LastUpdatedAt": "2025-10-28T09:47:17.4809536+00:00",
+    "Models": [
+      "Charged battery summer FY31 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "6d5f7bf5-e1c2-44a5-99f5-4d450f7628f6",
+    "ExecutionId": "161677dd-5377-4012-8785-258749e48376",
+    "StudyId": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "ChangeSetId": "393c6b08-385c-412a-8199-100862380b4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-10-28T09:46:21.9635057+00:00",
+    "LastUpdatedAt": "2025-10-28T09:49:04.7657965+00:00",
+    "Models": [
+      "Standalone battery FY30 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "9d2f0108-7163-47b3-8414-ba3a7ee7a6c4",
+    "ExecutionId": "f57a1e1a-71b3-4bc9-bb5b-f5a114a11a38",
+    "StudyId": "3319d949-549a-489a-973c-595b98b1c030",
+    "ChangeSetId": "20998622-b77f-4b2e-9b62-1cdf480ee396",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-28T17:57:48.3160542+00:00",
+    "LastUpdatedAt": "2025-10-28T21:41:07.7392412+00:00",
+    "Models": [
+      "Standalone battery FY30 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "b3c5438e-383a-4a22-8f9c-386b04340e21",
+        "Name": "Model Standalone battery FY30 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1ec47c4c-4b74-46bc-90f1-b9d85c76b3fc",
+    "ExecutionId": "fab4970f-1398-49d7-8b3d-42616edc775f",
+    "StudyId": "2f4a3090-2016-45b7-8d74-b187136fd3de",
+    "ChangeSetId": "dc4afcd6-ae83-4880-a695-ec6228466bc4",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-10-31T10:10:22.2360341+00:00",
+    "LastUpdatedAt": "2025-11-01T18:32:50.7715363+00:00",
+    "Models": [
+      "LT - Base"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [
+      {
+        "Id": "6d6c822a-33c9-4c47-959b-3bf3e33f5049",
+        "Name": "Model LT - Base Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "55507410-a08f-472a-ab9b-50f867a0e8fc",
+    "ExecutionId": "2eb5459e-7216-4c32-a97b-5137cc939d85",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-01T03:57:38.0645412+00:00",
+    "LastUpdatedAt": "2025-11-01T05:28:51.1925651+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [
+      {
+        "Id": "e7d6baa2-74b6-47c7-bad1-9345a3514a81",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "ad4a42bb-f801-4de7-bd43-d977bc5928b5",
+    "ExecutionId": "e3a8f064-dfd1-4756-a86d-913982ba2fa7",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-01T03:57:46.073463+00:00",
+    "LastUpdatedAt": "2025-11-01T05:28:02.3179463+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY31 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [
+      {
+        "Id": "609e6045-bfd0-4112-8aaf-58a91a6053bd",
+        "Name": "Model Dispatch Run - 90 Samples - FY31 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "88add6fc-2f54-4906-8644-cdb0959e48ee",
+    "ExecutionId": "9902fe6e-ea6c-4dde-af9e-681be0a2ef66",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-01T03:57:53.0995413+00:00",
+    "LastUpdatedAt": "2025-11-01T05:27:45.9220086+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY36 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [
+      {
+        "Id": "d760c841-519a-4767-99da-1115d3fc5032",
+        "Name": "Model Dispatch Run - 90 Samples - FY36 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarlo",
+    "Id": "0acf7d39-2616-405e-aec9-5586b04cbd33",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:31:25.5962532+00:00",
+    "LastUpdatedAt": "2025-11-01T05:35:41.9663175+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "811a6dcc-911e-49b4-a0cc-5820b9c30460",
+        "Name": null
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 2,
+      "MinimumMemoryInGb": 16,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": true,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": 10,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "00e4ad78-8c80-4c9f-aa69-20551a56b41b",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.5665326+00:00",
+    "LastUpdatedAt": "2025-11-01T07:34:50.4827977+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "3f9c89e0-844e-4a5a-b17b-a639dc4f93f8",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "a2e3f3c7-ef58-481a-8daf-2c43cc482ec1",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6047567+00:00",
+    "LastUpdatedAt": "2025-11-01T07:39:11.5122503+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "20125f0f-ced1-4077-9e3b-657ea02eb268",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "d1603784-4df7-4baa-8c52-257fc8031401",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6113443+00:00",
+    "LastUpdatedAt": "2025-11-01T07:38:52.1670382+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "046f34bc-0911-4881-9416-858a27aac164",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "d8d141ed-fe31-4975-9e6c-1089f9ca0549",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6175043+00:00",
+    "LastUpdatedAt": "2025-11-01T07:45:45.3219743+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "b702a32a-b8b5-4cc8-bbc6-003e8c6cbab5",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "a4c47d23-eb16-43d4-b9a4-acc1f55524b5",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6260761+00:00",
+    "LastUpdatedAt": "2025-11-01T07:38:06.9322941+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "a6dc3886-7878-43da-ab51-94d474c490c2",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "000000dd-6585-4b82-bd2e-0268eda56f25",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6313028+00:00",
+    "LastUpdatedAt": "2025-11-01T07:44:26.848795+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "c1877ac0-6fec-4891-acbe-32e5c55759c1",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "9043af10-940d-4a55-96c4-4a99eb8eb026",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6370768+00:00",
+    "LastUpdatedAt": "2025-11-01T07:46:14.8461832+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "86d915af-0e4f-4634-90eb-35533c0f8f6e",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "a0ce7fef-2f00-43f0-8fe3-927544f287fd",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6428029+00:00",
+    "LastUpdatedAt": "2025-11-01T07:57:32.3203193+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "ff37d96b-9f48-45ac-afb4-63520b02c660",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "97295594-73ff-404f-8f70-373251cb2883",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6492002+00:00",
+    "LastUpdatedAt": "2025-11-01T07:51:16.1330093+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "34ee485b-c854-452c-93fc-0d37dae8d234",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "MonteCarloChild",
+    "Id": "b9255d45-f3fa-4869-b399-8c511d3d8396",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-01T05:35:41.6549606+00:00",
+    "LastUpdatedAt": "2025-11-01T08:12:25.976599+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "f1219411-3382-4d27-a2f6-e9d7a40e1800",
+        "Name": "Model Dispatch Run - 90 Samples - FY29 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Outages",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "ParquetSolutionStitch",
+    "Id": "58e31c59-e42f-415f-bc96-08ed0ec4d0b2",
+    "ExecutionId": "7f639d05-11f9-4a47-bdfc-b38d59620716",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 2,
+    "MinimumMemoryInGb": 16.00,
+    "CreatedAt": "2025-11-01T08:12:27.0539739+00:00",
+    "LastUpdatedAt": "2025-11-01T09:23:45.5980351+00:00",
+    "Models": [
+      "Dispatch Run - 90 Samples - FY29 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "14ede18a-66ea-477f-a062-7eb3cfad2360",
+        "Name": "Dispatch Run - 90 Samples - FY29 CEA"
+      }
+    ],
+    "SimulationEngine": null,
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "f47091b9-6af0-42ad-8810-4e0e283f0df6",
+    "ExecutionId": "beb82cda-92c8-4a32-8d6e-b9a465498a3b",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "c95e7af1-e24c-48db-99b3-16a7166d62fe",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 16,
+    "MinimumMemoryInGb": 128.00,
+    "CreatedAt": "2025-11-08T01:39:10.9777334+00:00",
+    "LastUpdatedAt": "2025-11-08T12:38:44.0101354+00:00",
+    "Models": [
+      "Dispatch Run -  1 sample - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "d0eaedab-0ba0-4ad4-b448-4aad9944588e",
+        "Name": "Model Dispatch Run -  1 sample - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "Split",
+    "Id": "e6d28c97-42b3-414d-b861-7fe46a1e4871",
+    "ExecutionId": "9bfb6622-d438-4bcb-b02c-b4fd97642721",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "c95e7af1-e24c-48db-99b3-16a7166d62fe",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T01:46:52.5988102+00:00",
+    "LastUpdatedAt": "2025-11-08T01:51:13.7646831+00:00",
+    "Models": [
+      "Dispatch Run -  9 variable samples - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1b49ee20-a863-410a-9b68-151ebf957fa6",
+        "Name": null
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 2,
+      "MinimumMemoryInGb": 16,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Planning",
+        "SplitDivisions": 4,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": "Year",
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "SplitChild",
+    "Id": "1a4e4169-3e0d-4d22-9d4c-f911f5c7f387",
+    "ExecutionId": "9bfb6622-d438-4bcb-b02c-b4fd97642721",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "c95e7af1-e24c-48db-99b3-16a7166d62fe",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T01:51:13.459559+00:00",
+    "LastUpdatedAt": "2025-11-08T03:00:08.2157856+00:00",
+    "Models": [
+      "Dispatch Run -  9 variable samples - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "83059260-1770-4c62-808a-708d1dae5f7e",
+        "Name": "Model Dispatch Run -  9 variable samples - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Planning",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "SplitChild",
+    "Id": "c4cd8581-8cb8-4e36-8163-b70e6d2e5a47",
+    "ExecutionId": "9bfb6622-d438-4bcb-b02c-b4fd97642721",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "c95e7af1-e24c-48db-99b3-16a7166d62fe",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T01:51:13.4817183+00:00",
+    "LastUpdatedAt": "2025-11-08T05:00:24.2098697+00:00",
+    "Models": [
+      "Dispatch Run -  9 variable samples - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "ed924f7d-f3a5-4559-9200-acd3ad3366b8",
+        "Name": "Model Dispatch Run -  9 variable samples - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Planning",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "SplitChild",
+    "Id": "22bca20b-2328-40bc-b22a-a14f9eea18d1",
+    "ExecutionId": "9bfb6622-d438-4bcb-b02c-b4fd97642721",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "c95e7af1-e24c-48db-99b3-16a7166d62fe",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T01:51:13.4888746+00:00",
+    "LastUpdatedAt": "2025-11-08T07:57:49.1556687+00:00",
+    "Models": [
+      "Dispatch Run -  9 variable samples - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "cbf35124-32c9-4083-bbf0-2463da1aadb7",
+        "Name": "Model Dispatch Run -  9 variable samples - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Planning",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "SplitChild",
+    "Id": "6bae494a-1ec5-46b4-b2eb-7f89221b4ca2",
+    "ExecutionId": "9bfb6622-d438-4bcb-b02c-b4fd97642721",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "c95e7af1-e24c-48db-99b3-16a7166d62fe",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T01:51:13.4989641+00:00",
+    "LastUpdatedAt": "2025-11-08T21:15:33.617278+00:00",
+    "Models": [
+      "Dispatch Run -  9 variable samples - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "bff14b49-56f9-4906-9a23-c20e2e4e824c",
+        "Name": "Model Dispatch Run -  9 variable samples - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": {
+      "RequestedCpuCores": 0,
+      "MinimumMemoryInGb": 0,
+      "InstanceCount": null,
+      "Index": null,
+      "IsAutoStitchEnabled": false,
+      "SplitOptions": {
+        "SplitType": "Planning",
+        "SplitDivisions": null,
+        "ChronologicalStepType": null,
+        "PlanningHorizonStepType": null,
+        "RunOnSingleInstance": false
+      },
+      "StitchOptions": null
+    },
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "6c481ff4-7913-4e49-a3c7-1af5c55fd553",
+    "ExecutionId": "ead1bb99-553d-492b-8cb2-95c00f966d3c",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:08.391161+00:00",
+    "LastUpdatedAt": "2025-11-08T08:40:04.3046719+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY27"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "5cf2f910-33fe-4008-90be-43679bd9253f",
+        "Name": "Model Dispatch Run ST-  FY27 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "cf7a5cbd-77ca-438d-b213-aeab2ef42ec5",
+    "ExecutionId": "2e5ec517-5b4b-4d36-ad31-c35afc7c3563",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:18.1165588+00:00",
+    "LastUpdatedAt": "2025-11-08T08:40:10.2065874+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY28"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "908d1b11-8b3d-40f7-bdc9-421c09b4ffa4",
+        "Name": "Model Dispatch Run ST-  FY28 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5a5a114f-3331-4ff3-a562-8e5728c8d01c",
+    "ExecutionId": "493d041c-21b7-45fd-a06b-5fe9b46c3cae",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:26.1932661+00:00",
+    "LastUpdatedAt": "2025-11-08T08:50:56.3178534+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY29"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "10165c74-81e7-48f0-a507-7271dbbd1262",
+        "Name": "Model Dispatch Run ST-  FY29 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "36ee2e15-309e-488b-bafd-97cb147f93d1",
+    "ExecutionId": "1b579e8d-944b-4830-9f2a-b1bd9171e9ed",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:32.7431219+00:00",
+    "LastUpdatedAt": "2025-11-08T08:55:38.2909663+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY30"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "3254c750-2293-493d-9745-92059f7f729d",
+        "Name": "Model Dispatch Run ST-  FY30 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "2e6c8772-15bc-4c7b-8287-f8d00949091d",
+    "ExecutionId": "246133bd-6414-4602-84ee-d5c11d9c229e",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:39.7480055+00:00",
+    "LastUpdatedAt": "2025-11-08T08:57:46.156545+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY31"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "48fc7cdd-f429-461b-bd43-1e5ba71b2c75",
+        "Name": "Model Dispatch Run ST-  FY31 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "d62b7d9f-7c52-4092-9577-af845d3a2b2a",
+    "ExecutionId": "f9fe23d8-0aed-4bab-abe9-d41eaf076049",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:45.754611+00:00",
+    "LastUpdatedAt": "2025-11-08T10:33:10.9990143+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "3733e3fa-56bb-477b-8494-bb6933f28e18",
+        "Name": "Model Dispatch Run ST-  FY32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "b5eda744-3cbf-449d-b8ae-5a8b93f817cd",
+    "ExecutionId": "3324d409-1b4b-445b-a1a8-112460cb1f40",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:51.7669005+00:00",
+    "LastUpdatedAt": "2025-11-08T10:41:23.530575+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY33"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "2b4a67de-ebf8-4c15-a3da-31295dcd11a3",
+        "Name": "Model Dispatch Run ST-  FY33 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "b7a776b9-3aa1-445a-bb2c-98ea366e6f9f",
+    "ExecutionId": "1a7050a4-68d7-49e4-b253-3da7bc2c6433",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:29:57.3457441+00:00",
+    "LastUpdatedAt": "2025-11-08T10:42:57.5616282+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY34"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "520424d2-b72c-4fc3-b682-a5d564ad42ad",
+        "Name": "Model Dispatch Run ST-  FY34 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "c5b52b3b-9072-4370-a0fb-6f6ace9c1597",
+    "ExecutionId": "413bf5fb-e721-47ca-9006-ddb7c5a2fb50",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:30:06.789521+00:00",
+    "LastUpdatedAt": "2025-11-08T10:46:04.4263064+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY35"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "ad808f01-5be7-4427-997c-7431d82aae48",
+        "Name": "Model Dispatch Run ST-  FY35 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "f2f6b91f-460c-472f-b0f5-f2301b63390e",
+    "ExecutionId": "54c81371-2d0d-4f1a-8682-4a52e31f4012",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "a98ce726-0065-4fcb-9ddd-7a840d428a4c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:30:49.3429412+00:00",
+    "LastUpdatedAt": "2025-11-08T10:39:08.6571824+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "d47a2c55-358f-4fa2-a767-d65128add01b",
+        "Name": "Model Dispatch Run ST-  FY36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "06ecaadf-c9e8-4db4-907a-c85cbb15f783",
+    "ExecutionId": "999636a5-dd1a-4b51-982c-7165b196e759",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:18.4321816+00:00",
+    "LastUpdatedAt": "2025-11-08T09:01:53.0109258+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY27 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "5abf51b2-03b6-41a2-b035-b1da6c416b4f",
+        "Name": "Model Dispatch Run ST-  FY27 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "50008a47-a6ca-448f-8edf-27c34e041cbf",
+    "ExecutionId": "b249c30d-aaca-4929-ac66-e256ff207b65",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:25.1633249+00:00",
+    "LastUpdatedAt": "2025-11-08T09:01:57.3260635+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY28 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1f4f4d58-a247-4486-9037-0cb6608755aa",
+        "Name": "Model Dispatch Run ST-  FY28 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "069f9ad8-7da4-463a-96fc-dd499ef64faa",
+    "ExecutionId": "b6970971-8ae0-4f78-b8eb-efb85b79aaa4",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:30.977025+00:00",
+    "LastUpdatedAt": "2025-11-08T09:13:31.3086949+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY29 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "c7ac353b-267c-460d-93fb-8f1ee265910d",
+        "Name": "Model Dispatch Run ST-  FY29 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "8787ef8c-16fb-4843-b5cc-64dfd706e429",
+    "ExecutionId": "4da0b34c-874d-4232-a77e-aa2c832c4e57",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:39.9338423+00:00",
+    "LastUpdatedAt": "2025-11-08T09:17:34.1430221+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY29 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1f77523a-411a-4d88-9370-4fb8f7465a77",
+        "Name": "Model Dispatch Run ST-  FY29 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "6c3099e5-0bf2-4803-95a5-aed7b20dd947",
+    "ExecutionId": "2c4458b8-e9d3-4678-9650-e0829d7a0217",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:45.8936323+00:00",
+    "LastUpdatedAt": "2025-11-08T09:20:15.4877658+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY30 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "d0390485-322c-4a04-bc0e-1f08bfa7c7cb",
+        "Name": "Model Dispatch Run ST-  FY30 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "380a64c3-61d9-4bae-8715-2af32e6257aa",
+    "ExecutionId": "046a8982-605e-40fa-8adc-bc4dff4d2f72",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:53.4064909+00:00",
+    "LastUpdatedAt": "2025-11-08T09:22:22.9399345+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY31 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "d46c4bc5-37a8-456d-9753-7ed44c53e8b9",
+        "Name": "Model Dispatch Run ST-  FY31 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "794119d9-e755-4513-b0e5-a81e0b3cd35e",
+    "ExecutionId": "729e6864-f83c-4445-b01f-23bd32ed5fee",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:57:59.0354972+00:00",
+    "LastUpdatedAt": "2025-11-08T10:57:36.0268786+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY32 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "f952f268-7d95-48dd-85b5-85625a05ce0b",
+        "Name": "Model Dispatch Run ST-  FY32 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5a57f5c8-3b7d-4890-af24-0f3386442495",
+    "ExecutionId": "e3b3b1d1-0dde-4a5c-ab37-d7847edac72b",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:58:04.0494111+00:00",
+    "LastUpdatedAt": "2025-11-08T11:05:12.2348755+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY33 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "9d5d62e4-860d-4d9b-9c85-a4b1775ede2c",
+        "Name": "Model Dispatch Run ST-  FY33 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "daf4e18e-9406-48de-83b9-e255ffbd91b8",
+    "ExecutionId": "563586bf-3256-43e7-b8db-372c4053a96c",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:58:09.5032424+00:00",
+    "LastUpdatedAt": "2025-11-08T11:08:32.7110806+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY34 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "12da73ca-7e3d-4464-8113-c3841df79ad1",
+        "Name": "Model Dispatch Run ST-  FY34 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "ab68a98b-2b22-4d71-b1f4-bf207f6651d1",
+    "ExecutionId": "97060ec4-30b2-40d6-9258-34eaf8e7293f",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:58:16.2596708+00:00",
+    "LastUpdatedAt": "2025-11-08T11:17:04.0123414+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY35 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "5221219d-547e-4fe5-bef4-d6c92bc82a08",
+        "Name": "Model Dispatch Run ST-  FY35 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5ee4a473-e1bb-481f-89aa-551b819190a4",
+    "ExecutionId": "e54a35a0-c5cb-481e-8b9b-517f49e15683",
+    "StudyId": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "ChangeSetId": "f1ca61a8-e1f3-4b35-8bb9-f57e83efc669",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-08T08:58:23.6419554+00:00",
+    "LastUpdatedAt": "2025-11-08T11:07:23.7849423+00:00",
+    "Models": [
+      "Dispatch Run ST-  FY36 Copy"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1957790a-3bb0-4ef9-b9c3-8dec9b58ec93",
+        "Name": "Model Dispatch Run ST-  FY36 Copy Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1c4fcf68-868a-4462-91b9-86606d9ca596",
+    "ExecutionId": "149b7d1b-7105-400b-a31f-d879b40ff97a",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-10T08:58:03.9206559+00:00",
+    "LastUpdatedAt": "2025-11-10T09:06:27.1590843+00:00",
+    "Models": [
+      "FY27 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "8ec57ea5-da0c-45a8-bb9b-8e81db1bd62c",
+    "ExecutionId": "d1514a52-7740-44b5-83b8-fe3f6fb15d34",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-10T08:58:16.8181758+00:00",
+    "LastUpdatedAt": "2025-11-10T09:06:27.5108414+00:00",
+    "Models": [
+      "FY28 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "76bb556f-bd5e-4af5-8bae-78479d5a3884",
+    "ExecutionId": "abed1c2b-e694-453e-bc4e-6336c35c902f",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-10T08:59:55.9879369+00:00",
+    "LastUpdatedAt": "2025-11-10T09:06:39.8753434+00:00",
+    "Models": [
+      "FY32 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "06e28d1f-e9f5-4c2a-a679-5aaf9e4ffd0a",
+    "ExecutionId": "4425b5d7-24b5-47fb-a3ae-48b292ad5382",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-10T09:00:00.6507093+00:00",
+    "LastUpdatedAt": "2025-11-10T09:06:44.1931944+00:00",
+    "Models": [
+      "FY33 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "cd46eff4-d415-4087-9214-abd30adedc3f",
+    "ExecutionId": "38ba6d25-3823-488f-819a-e763769bb010",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-10T09:00:05.715814+00:00",
+    "LastUpdatedAt": "2025-11-10T09:06:44.5153276+00:00",
+    "Models": [
+      "FY34 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "68b4d763-b0aa-4a71-9712-de7f06be7a02",
+    "ExecutionId": "14221d7b-fd17-4c54-92cb-96acb736adfb",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "93ddfb46-de98-4a4d-be34-3da6bf7f3ad1",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-10T09:00:10.1562952+00:00",
+    "LastUpdatedAt": "2025-11-10T09:06:56.9189837+00:00",
+    "Models": [
+      "FY35 CEA"
+    ],
+    "Status": "Failed",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "10061ae8-142c-4098-9179-e195c2299825",
+    "ExecutionId": "d11d0bc2-4a8e-4093-9538-a8640cd9e2e0",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T10:46:50.5202858+00:00",
+    "LastUpdatedAt": "2025-11-12T11:01:09.6925737+00:00",
+    "Models": [
+      "FY27 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "c0c1f109-daa2-452c-a117-0b3f63891def",
+        "Name": "Model FY27 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "30ffdd03-db15-4cfc-8317-fdeff53fd27f",
+    "ExecutionId": "36475263-237f-45ac-b0da-1d7a10922a42",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:06:29.7209363+00:00",
+    "LastUpdatedAt": "2025-11-12T11:17:03.06909+00:00",
+    "Models": [
+      "FY27 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "242a466f-2d31-47ff-bcaf-76502a7cae94",
+    "ExecutionId": "6d792310-9a05-49c1-af54-ae9ef7aa9dbb",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:06:36.3583458+00:00",
+    "LastUpdatedAt": "2025-11-12T11:16:54.7473345+00:00",
+    "Models": [
+      "FY28 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "3d021900-0d44-40f3-9d22-20a16f140eb1",
+        "Name": "Model FY28 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1bea49cd-d673-466d-9d3d-580816c87f38",
+    "ExecutionId": "0c91f5ae-3ee5-4232-ac41-2437b1ca5724",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:06:41.7835137+00:00",
+    "LastUpdatedAt": "2025-11-12T11:30:23.7224538+00:00",
+    "Models": [
+      "FY32 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "d703b690-27b7-465c-8d82-5e744707aa28",
+        "Name": "Model FY32 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1698591c-2cbe-4546-86a0-414fcf7f3ca4",
+    "ExecutionId": "9c08c5c7-38a1-4ab9-8638-0a902d15afbb",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:06:46.8091937+00:00",
+    "LastUpdatedAt": "2025-11-12T11:28:46.7048895+00:00",
+    "Models": [
+      "FY33 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "9051ef05-80b1-4479-a568-1adf644366cf",
+        "Name": "Model FY33 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "99944fe6-f674-4c7e-b423-88cc097dbf13",
+    "ExecutionId": "4d8b9d87-3a29-4360-9e80-8c79391697ac",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:06:53.1753444+00:00",
+    "LastUpdatedAt": "2025-11-12T11:34:08.5129658+00:00",
+    "Models": [
+      "FY34 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "6021315e-da77-4621-b494-9faa76dbf39e",
+        "Name": "Model FY34 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "0c1cd33d-21e2-4dea-b8fe-c31b88b1fe95",
+    "ExecutionId": "3eabf946-8ac9-449d-acdd-47d1de67765c",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:06:58.721991+00:00",
+    "LastUpdatedAt": "2025-11-12T11:36:09.9466179+00:00",
+    "Models": [
+      "FY35 CEA"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "8aba4740-539e-4bf9-bbe0-872baa269e9c",
+        "Name": "Model FY35 CEA Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5531731d-8181-4f41-a2b7-868333db64de",
+    "ExecutionId": "d83e17af-86f7-4060-be96-95a7191c0d85",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "c24b1d68-8792-48ca-9d32-fae35e144ff7",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T11:07:04.7987476+00:00",
+    "LastUpdatedAt": "2025-11-12T11:16:33.7760458+00:00",
+    "Models": [
+      "FY27 CEA"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "c33fdb4f-af83-4948-9081-f1e4d174c1cf",
+    "ExecutionId": "257c11f9-0d68-4856-b4c1-38a498f62d44",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "d816182f-9b29-40a9-8765-b885b5b96d82",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T13:13:08.0801885+00:00",
+    "LastUpdatedAt": "2025-11-12T13:45:51.5543606+00:00",
+    "Models": [
+      "MT. Base.without Bawana spot"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "376b9e39-4f40-436b-b031-cf14f13f77ec",
+        "Name": "Model MT. Base.without Bawana spot Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "300fb8f8-e0c9-434d-ba74-4b81a3d73b55",
+    "ExecutionId": "16765d76-a278-4034-9c8b-68552c4e754c",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "d816182f-9b29-40a9-8765-b885b5b96d82",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-12T13:13:14.6197211+00:00",
+    "LastUpdatedAt": "2025-11-12T13:46:35.9036209+00:00",
+    "Models": [
+      "MT. Base.1500 SB oct-28"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "f6ebbccf-166f-486d-a4b7-0dcab297a1aa",
+        "Name": "Model MT. Base.1500 SB oct-28 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "9546f52c-a2a3-4c49-895f-48b4e13a784c",
+    "ExecutionId": "5fc49450-009e-46d1-ace3-fa759dec6802",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "7d807f71-0487-459d-a3c0-b04ed7de0d47",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-13T05:49:52.889003+00:00",
+    "LastUpdatedAt": "2025-11-13T06:25:53.8881215+00:00",
+    "Models": [
+      "MT. Base.1500 SB oct-28"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "7860fb81-aca6-4baa-a3a1-5c07f5bc0432",
+        "Name": "Model MT. Base.1500 SB oct-28 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "010b867f-5029-4a1a-8291-dd3b8d4e4acb",
+    "ExecutionId": "3b0a803f-580e-4e99-bf6a-ec31b88d48b3",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "8cff018b-1ea4-4fff-8600-413a93291560",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-14T04:27:02.7981691+00:00",
+    "LastUpdatedAt": "2025-11-14T07:00:24.6108551+00:00",
+    "Models": [
+      "CEA full horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1065439b-e81b-4c64-8f73-d888946ece97",
+        "Name": "Model CEA full horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "cdcff640-7158-4575-8122-43864415278c",
+    "ExecutionId": "3396b332-a48e-4bf4-a9c7-227ae705c694",
+    "StudyId": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "ChangeSetId": "679d6d56-c5f7-4f36-96dc-8f45825dc937",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-17T13:28:28.6068106+00:00",
+    "LastUpdatedAt": "2025-11-17T15:20:12.1418787+00:00",
+    "Models": [
+      "Proposed full horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "23bc7a85-766e-4efb-958e-01f03a8035f4",
+        "Name": "Model Proposed full horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "7bedbe05-bcd9-4ff1-b281-c51b157649f6",
+    "ExecutionId": "15f9ac31-54d2-4ec7-abb8-af92007f0f36",
+    "StudyId": "c0ca3b93-2f4e-4a42-ac5f-151a21e0ddd9",
+    "ChangeSetId": "a97b5e34-420d-48e0-8de0-f63d74f8e20c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-18T09:36:51.3052377+00:00",
+    "LastUpdatedAt": "2025-11-18T14:14:53.6240049+00:00",
+    "Models": [
+      "Proposed S2 Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "fc209514-f02c-4136-9170-d366814ed851",
+        "Name": "Model Proposed S2 Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "256f0483-1e33-48ae-9f7b-82c9be0d0f87",
+    "ExecutionId": "2dc6549e-222f-4568-a72b-5d716a8a9dd6",
+    "StudyId": "f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90",
+    "ChangeSetId": "ee274daa-3f96-4275-b35e-9457b0f1fbb2",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-19T07:23:04.4371781+00:00",
+    "LastUpdatedAt": "2025-11-19T14:42:54.2408696+00:00",
+    "Models": [
+      "Proposed S3 - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "167b7f1e-997b-4ea2-be2c-130bcc83d07a",
+        "Name": "Model Proposed S3 - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "fa2eb964-7480-4576-ae03-25320818707d",
+    "ExecutionId": "5ab9f934-e030-4dc9-8ec5-1ba58261748e",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "9d81e4fc-b9c9-4c3a-9cdd-f893f3bc4dc3",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-19T19:04:31.2147382+00:00",
+    "LastUpdatedAt": "2025-11-19T19:19:29.1683112+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY30.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "7dfcd124-f3d5-4378-afb3-5ab393601103",
+        "Name": "Model Base case1500.390 SB.As Peak FY30.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "ff12b2d7-cd43-4497-a113-e90f8a615435",
+    "ExecutionId": "7680d465-5167-4311-9dcc-bee4f7cd4243",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "dda207ab-0476-45c6-b2b6-6507aa8bee7c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T02:31:06.7311862+00:00",
+    "LastUpdatedAt": "2025-11-20T04:06:51.5040624+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY30.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "e2342a95-c0e9-4399-9b4c-7e8e8fabebf6",
+        "Name": "Model Base case1500.390 SB.As Peak FY30.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "799c1002-d30a-4492-8c46-5c3289a4a919",
+    "ExecutionId": "eb707e6b-9612-433a-a79d-19361e2054d6",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "810e9769-f79a-4254-8e59-d3f6061208eb",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T05:10:01.5586998+00:00",
+    "LastUpdatedAt": "2025-11-20T07:05:20.7445176+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY29.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "96e80815-0bd2-4c34-a457-042a369dec2e",
+        "Name": "Model Base case1500.390 SB.As Peak FY29.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "531c597a-14d2-4e21-a366-da7b3914433c",
+    "ExecutionId": "c42e37e0-f681-4deb-866d-7c6738f880de",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "7e9db4d1-53b1-4ce7-b1e3-301db3aae98f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T09:52:38.7266563+00:00",
+    "LastUpdatedAt": "2025-11-20T11:38:43.8394914+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak.400 B FY29.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "9b9351e2-d750-4937-8d05-24b8481f8a04",
+        "Name": "Model Base case1500.390 SB.As Peak.400 B FY29.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "724c43b1-c866-46b6-9456-67415dada197",
+    "ExecutionId": "ed4f9d63-f4e5-494c-ba96-ef1a70f3a952",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "7e9db4d1-53b1-4ce7-b1e3-301db3aae98f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T09:52:42.6625928+00:00",
+    "LastUpdatedAt": "2025-11-20T11:31:23.9377289+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY29.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "7f01ae1d-03a1-4f66-bbce-eddebef5ce3d",
+        "Name": "Model Base case1500.390 SB.As Peak FY29.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "f3afba86-d31b-471e-85d8-bc023c67edbb",
+    "ExecutionId": "a19d56bd-bcd7-4f16-bf94-1601b6ae28bd",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "82bebabf-2288-4918-a1c9-0a303bddfd05",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T08:43:46.5709624+00:00",
+    "LastUpdatedAt": "2025-11-21T09:15:46.9126922+00:00",
+    "Models": [
+      "MT. Base.1500 SB 200MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "7e3a31ba-1274-4c9f-8adc-5ae926c54b8e",
+        "Name": "Model MT. Base.1500 SB 200MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "ca05daad-b71e-41c9-aaff-23bd7698c51c",
+    "ExecutionId": "7faf4049-b292-444e-bc27-9062698a7164",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "82bebabf-2288-4918-a1c9-0a303bddfd05",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T08:43:51.3294941+00:00",
+    "LastUpdatedAt": "2025-11-21T09:15:21.5776282+00:00",
+    "Models": [
+      "MT. Base.1500 SB 300MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "622f5db1-350c-42b6-83a0-f2b15581f10f",
+        "Name": "Model MT. Base.1500 SB 300MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "39ad15a2-f861-4fac-b65c-a722c60895f0",
+    "ExecutionId": "305119a5-5283-4e96-a670-315accdd5b53",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "82bebabf-2288-4918-a1c9-0a303bddfd05",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T08:43:56.5060421+00:00",
+    "LastUpdatedAt": "2025-11-21T09:22:03.0675563+00:00",
+    "Models": [
+      "MT. Base.1500 SB oct-28 200MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "27356587-4c1b-433f-9735-8dcea9b884b4",
+        "Name": "Model MT. Base.1500 SB oct-28 200MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "94007c83-c740-4b38-91ae-f4fc652473c2",
+    "ExecutionId": "8d3d2f33-bb3b-4694-b1b7-ab3aeb64c597",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "82bebabf-2288-4918-a1c9-0a303bddfd05",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T08:44:00.9894164+00:00",
+    "LastUpdatedAt": "2025-11-21T09:22:25.8252699+00:00",
+    "Models": [
+      "MT. Base.1500 SB oct-28 300MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "8b4d37c4-f201-4e3b-8ccc-9f369d60a827",
+        "Name": "Model MT. Base.1500 SB oct-28 300MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "85bcdd99-9067-46d8-a022-e4e4c554f7c5",
+    "ExecutionId": "d8e32ed8-d330-4ca7-bace-e76d70d11c14",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "a95d3d0e-3ba6-4c83-a75e-e79a44362443",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T10:33:08.4673421+00:00",
+    "LastUpdatedAt": "2025-11-21T11:03:46.133048+00:00",
+    "Models": [
+      "MT. Base.1500 SB 200MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "4fc10daa-7bbf-4690-be1c-2aae1006a327",
+        "Name": "Model MT. Base.1500 SB 200MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "6552121e-8cf0-4f22-88b6-19e7ae81a800",
+    "ExecutionId": "f8408c97-dad6-4010-bdcd-fb73424a82bb",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "a95d3d0e-3ba6-4c83-a75e-e79a44362443",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T10:33:18.2986523+00:00",
+    "LastUpdatedAt": "2025-11-21T11:09:27.1201159+00:00",
+    "Models": [
+      "MT. Base.1500 SB oct-28 200MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "374c30af-1acf-4017-93c1-665f8d38a904",
+        "Name": "Model MT. Base.1500 SB oct-28 200MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "b23cfea0-cf60-4df7-ab62-7031ae6a495d",
+    "ExecutionId": "9907d2be-8f93-4ba1-a5a9-b3e9a7f406f9",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "a95d3d0e-3ba6-4c83-a75e-e79a44362443",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T10:33:50.0447969+00:00",
+    "LastUpdatedAt": "2025-11-21T11:03:35.4006529+00:00",
+    "Models": [
+      "MT. Base.1500 SB 300MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "c8ebc7c4-af07-4568-81c1-a1428f908010",
+        "Name": "Model MT. Base.1500 SB 300MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "9051aa04-2f3b-4311-9dc6-1fb38f49dd53",
+    "ExecutionId": "59aec79a-053f-4676-be31-5487cdca75fb",
+    "StudyId": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "ChangeSetId": "a95d3d0e-3ba6-4c83-a75e-e79a44362443",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-21T10:33:54.422382+00:00",
+    "LastUpdatedAt": "2025-11-21T11:18:50.5149944+00:00",
+    "Models": [
+      "MT. Base.1500 SB oct-28 300MW"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "298730eb-c474-46f6-af55-d43a807e08e9",
+        "Name": "Model MT. Base.1500 SB oct-28 300MW Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "abe1039c-ebb1-443a-a43d-e679904adf77",
+    "ExecutionId": "cfa0f9ac-5ef3-4c01-9d1c-49aeeb6f209c",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "05742076-1c7c-40c4-a863-990adef8f62b",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-27T07:06:07.4450997+00:00",
+    "LastUpdatedAt": "2025-11-27T08:10:51.1642419+00:00",
+    "Models": [
+      "Base case1500.As Peak FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "853f3d7f-9dcb-44cc-8605-e99c5b8da4ab",
+        "Name": "Model Base case1500.As Peak FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "83d92abf-4ef5-4a47-b7a0-72518739412f",
+    "ExecutionId": "382a3e83-2f6e-4ef7-aba8-66f507722f80",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "7fadad05-d2c1-45b7-b688-e790f11b081b",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-27T10:48:11.604834+00:00",
+    "LastUpdatedAt": "2025-11-27T11:10:29.7734036+00:00",
+    "Models": [
+      "Base case1500. FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "b82d8cb8-fee4-49fb-ac91-9456c0795422",
+        "Name": "Model Base case1500. FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "040ed443-cf03-40b7-82cd-39ecb440645c",
+    "ExecutionId": "d36b3187-5cd2-4fb6-a830-2f3f65250c11",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "175f49a3-e3ac-40da-a5cd-0d21ccb93475",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-27T11:23:23.3475944+00:00",
+    "LastUpdatedAt": "2025-11-27T11:57:55.4634321+00:00",
+    "Models": [
+      "Base case1500. FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "8391142d-bde5-44ba-b594-c9317e9d3876",
+        "Name": "Model Base case1500. FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "9569b321-4edf-4149-81a7-e23945c7be7a",
+    "ExecutionId": "b1d61301-14b4-4172-bd2b-655a4e9ee3b2",
+    "StudyId": "206f4c16-e5cf-42c8-b8d2-fcf5f29c7474",
+    "ChangeSetId": "0d72e7de-85ac-4611-aead-6b28372ddce9",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-12-01T11:46:02.2081496+00:00",
+    "LastUpdatedAt": "2025-12-01T11:46:33.1770266+00:00",
+    "Models": [
+      "Nodal"
+    ],
+    "Status": "Cancelled",
+    "ModelIdentifiers": [],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "1b680083-b7ec-4b5d-a034-f2a65c4b0e2e",
+    "ExecutionId": "f43bf464-30ac-4b19-9e82-5a655c3146b3",
+    "StudyId": "206f4c16-e5cf-42c8-b8d2-fcf5f29c7474",
+    "ChangeSetId": "0d72e7de-85ac-4611-aead-6b28372ddce9",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-12-01T11:50:27.9356487+00:00",
+    "LastUpdatedAt": "2025-12-01T11:54:27.7295586+00:00",
+    "Models": [
+      "Nodal"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "4a0d9557-2524-4e5d-b01a-f4371527deda",
+        "Name": "Model Nodal Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5da8ee0f-81d6-4f1d-beba-cc26f37cb2ad",
+    "ExecutionId": "728c6749-2a04-4584-91c4-7bbc45024394",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "8af1a496-3094-499e-af5d-e3fd6575d271",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-12-03T11:36:45.3327048+00:00",
+    "LastUpdatedAt": "2025-12-03T16:04:31.8161207+00:00",
+    "Models": [
+      "Base case1500.charged BESS FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1fe5d18f-f8a9-4b2e-84cb-f2a450302bf5",
+        "Name": "Model Base case1500.charged BESS FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "fe1e46d0-57cc-465e-96c9-0bff55d0ba2d",
+    "ExecutionId": "45240202-3cd8-44da-acd7-d3005421e6df",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "98eda400-9be1-45c4-b09c-14fe38fbffdb",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-12-04T05:29:09.2010815+00:00",
+    "LastUpdatedAt": "2025-12-04T08:24:50.2401956+00:00",
+    "Models": [
+      "Base case1500.charged BESS FY29.32 no SB"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "ff9c3226-72f0-4b98-a6ee-6fa4904d6389",
+        "Name": "Model Base case1500.charged BESS FY29.32 no SB Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  }
+]
+Count: 120
+
+C:\Users\plexos>plexos-cloud simulation enqueue --file "C:\Users\plexos\Desktop\API Automation\plexos_study_details_CEA.json"
+API request error: Bad Request: {"errors":{"SimulationOptions":["The SimulationOptions field is required."]},"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-50c1cf38b71eff8ee5f7fedb17002e14-d53383faa02e0afd-00"}
+
+C:\Users\plexos>plexos-cloud simulation build-request-from-previous
+Output directory is required
+Specify --help for a list of available options and commands.
+
+C:\Users\plexos>plexos-cloud simulation build-request-from-previous "C:\Users\plexos\Desktop\API Automation\plexos_study_details_Plexos_BRPL_datafile changed_sushant.json"
+Specify --help for a list of available options and commands.
+Error: Unrecognized command or argument 'C:\Users\plexos\Desktop\API Automation\plexos_study_details_Plexos_BRPL_datafile changed_sushant.json'
+
+C:\Users\plexos>plexos-cloud simulation build-request-from-previous --help
+CloudCLI.Commands.Simulation.BuildSimulationRequestFromIdCommand
+
+build simulation request based on previously ran simulation
+
+Usage: plexos-cloud simulation build-request-from-previous [options]
+
+Options:
+  -f|--format           Output format(json | csv | tsv | yaml | table | none)
+                        Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                        Default value is: JSON.
+  -q|--quiet            Turns off verbose messages from app
+  -aut|--automation     Turns on developer friendly structured response messages from app
+                        Allowed values are: None, PythonSDK.
+  -d|--outputDirectory  Directory for command output to be written to (required)
+  --overwrite           Overwrite any file that already exists
+  --simulationId        The ID of a simulation ran previously (required)
+  --file                File Name (required)
+  --changesetId         Override the request's changeset Id with this
+  --studyId             Override the request's study Id with this
+  --modelName           Override the request's model with this
+  --requestedCores      Override the request's desired core count with this
+  --requestedMemory     Override the request's desired memory (in Gb) with this
+  -?|-h|--help          Show help information.
+
+
+C:\Users\plexos>plexos-cloud simulation build-request-from-previous -d "C:\Users\plexos\Desktop\API Automation" --simulationId "206f4c16-e5cf-42c8-b8d2-fcf5f29c7474" --file "Plexos_BRPL_datafile changed_sushant"
+No simulation records with the ID :206f4c16-e5cf-42c8-b8d2-fcf5f29c7474 were returned.
+
+C:\Users\plexos>plexos-cloud simulation build-request-from-previous -d "C:\Users\plexos\Desktop\API Automation" --simulationId "1b680083-b7ec-4b5d-a034-f2a65c4b0e2e" --file Nodal
+{
+  "ExecutionIndex": null,
+  "ExecutionId": null,
+  "TenantId": null,
+  "CreatedByUser": null,
+  "CreatedByUserId": null,
+  "StudyId": "206f4c16-e5cf-42c8-b8d2-fcf5f29c7474",
+  "ChangeSetId": "0d72e7de-85ac-4611-aead-6b28372ddce9",
+  "Models": [
+    "Nodal"
+  ],
+  "SimulationOptions": {
+    "SupressSolutionWriting": false,
+    "BuildSelectedDataFiles": false,
+    "Locale": 1033,
+    "SolutionUploadUrl": null,
+    "DisableWebhookCallbacks": null,
+    "WebhookCallUrl": null,
+    "WebhookConfigurationId": null,
+    "MaxProcessInactivityMinutes": null,
+    "OutputFilters": [],
+    "ParquetDataFilePartitionSize": null,
+    "ParquetCompressionMethod": null,
+    "CongestionInsights": {
+      "CacheCongestionInsightsData": false,
+      "UseV2CongestionInsightsData": null,
+      "ExportCachedParquet": false
+    },
+    "SimulationTasks": [],
+    "ContingencyScreening": null,
+    "SolutionOptions": {
+      "ParquetSchemaVersion": 2,
+      "Name": null,
+      "Description": null,
+      "CreateParquetViewsDatabase": false
+    },
+    "MaxRetries": null,
+    "EnableRealTimeLog": true,
+    "IsModelDistributionRun": false,
+    "SimulationRunType": "SingleRun",
+    "TunerOptions": null,
+    "UseModelDefinedDiagnosticSettings": null,
+    "CustomArguments": null,
+    "SnapshotOptions": {
+      "EnablePlexosSnapshots": false,
+      "EnablePlexosSolverSnapshots": null,
+      "PlexosSnapshotMonitorMinutes": null,
+      "EnableReReporting": false
+    },
+    "SolutionReportIds": [],
+    "ChangesetDeltaId": null,
+    "PaginationMemory": null,
+    "RetryOptions": null,
+    "ChangesetDeltaFileUrl": null
+  },
+  "SimulationAffinity": null,
+  "ParallelizationOptions": null,
+  "SimulationData": [
+    {
+      "Uri": "https://studies-ind.energyexemplar.com/1.0/downloads/studies/206f4c16-e5cf-42c8-b8d2-fcf5f29c7474/changesets/0d72e7de-85ac-4611-aead-6b28372ddce9/input-data",
+      "Type": "ChangesetDatabase"
+    },
+    {
+      "Uri": "https://studies-ind.energyexemplar.com/1.0/downloads/studies/206f4c16-e5cf-42c8-b8d2-fcf5f29c7474/changesets/0d72e7de-85ac-4611-aead-6b28372ddce9/timeseries-zip",
+      "Type": "TimeseriesZipped"
+    }
+  ],
+  "SolutionData": [],
+  "DataConfiguration": null,
+  "SimulationEngine": {
+    "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+    "Version": "11.000.005.2508219",
+    "Name": "11.0 R05",
+    "EngineType": "Performance"
+  },
+  "Tags": null,
+  "Source": "CloudUI",
+  "Priority": 1,
+  "RequestedCpuCores": 8,
+  "MinimumMemoryInGb": 64.00,
+  "QueueId": null,
+  "RunParameters": [],
+  "RequestedInstanceType": null,
+  "SimulationType": "None",
+  "SimulationGroupId": null,
+  "VMInstanceProperties": null,
+  "Description": null
+}
+Downloaded file: Nodal
+Saved file to disk: C:\Users\plexos\Desktop\API Automation\Nodal
+
+C:\Users\plexos>plexos-cloud simulation enqueue --file "C:\Users\plexos\Desktop\API Automation\Nodal"
+1 new simulations started:
+
+[
+  {
+    "Id": "9562f53f-d840-4305-832a-0c6a7599a8de",
+    "ExecutionId": "b4806738-1f83-4900-8621-66a178c6121c",
+    "CreatedDate": "2025-12-05T07:35:26.968526",
+    "Status": "Queued"
+  }
+]
+
+C:\Users\plexos>pxc simulation list --help
+CloudCLI.Commands.Simulation.ListSimulationsCommand
+
+List simulations
+
+Usage: plexos-cloud simulation list [options]
+
+Options:
+  -f|--format        Output format(json | csv | tsv | yaml | table | none)
+                     Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                     Default value is: JSON.
+  -q|--quiet         Turns off verbose messages from app
+  -aut|--automation  Turns on developer friendly structured response messages from app
+                     Allowed values are: None, PythonSDK.
+  --simulationId     Filter by the simulation ID
+  --studyId          Filter by the study ID
+  --executionId      Filter by the executionId ID
+  --changesetId      Filter by the Changeset ID
+  --orderBy          Set the property to order results by
+                     Allowed values are: Id, ExecutionId, StudyId, ChangeSetId, Source, RequestedCpuCores,
+                     MinimumMemoryInGb, CreatedAt, LastUpdatedAt, Status, RetryCount, ParallelizationOptions.
+  --descending       Order the property descending
+  --top              Select the top N results
+  --skip             Skip the next N results
+  --raw              A raw string passed directly to odata endpoint, encased in double quotes. Cannot be used with other
+                     odata options
+  -?|-h|--help       Show help information.
+
+
+C:\Users\plexos>plexos-cloud simulation list --descending --help
+CloudCLI.Commands.Simulation.ListSimulationsCommand
+
+List simulations
+
+Usage: plexos-cloud simulation list [options]
+
+Options:
+  -f|--format        Output format(json | csv | tsv | yaml | table | none)
+                     Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                     Default value is: JSON.
+  -q|--quiet         Turns off verbose messages from app
+  -aut|--automation  Turns on developer friendly structured response messages from app
+                     Allowed values are: None, PythonSDK.
+  --simulationId     Filter by the simulation ID
+  --studyId          Filter by the study ID
+  --executionId      Filter by the executionId ID
+  --changesetId      Filter by the Changeset ID
+  --orderBy          Set the property to order results by
+                     Allowed values are: Id, ExecutionId, StudyId, ChangeSetId, Source, RequestedCpuCores,
+                     MinimumMemoryInGb, CreatedAt, LastUpdatedAt, Status, RetryCount, ParallelizationOptions.
+  --descending       Order the property descending
+  --top              Select the top N results
+  --skip             Skip the next N results
+  --raw              A raw string passed directly to odata endpoint, encased in double quotes. Cannot be used with other
+                     odata options
+  -?|-h|--help       Show help information.
+
+
+C:\Users\plexos>pxc simulation list --studyId "f7e3515d-a585-4c8e-a880-33ee36c450b9"
+Using current context:
+StudyId : f7e3515d-a585-4c8e-a880-33ee36c450b9
+[
+  {
+    "SimulationType": "None",
+    "Id": "fa2eb964-7480-4576-ae03-25320818707d",
+    "ExecutionId": "5ab9f934-e030-4dc9-8ec5-1ba58261748e",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "9d81e4fc-b9c9-4c3a-9cdd-f893f3bc4dc3",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-19T19:04:31.2147382+00:00",
+    "LastUpdatedAt": "2025-11-19T19:19:29.1683112+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY30.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "7dfcd124-f3d5-4378-afb3-5ab393601103",
+        "Name": "Model Base case1500.390 SB.As Peak FY30.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "ff12b2d7-cd43-4497-a113-e90f8a615435",
+    "ExecutionId": "7680d465-5167-4311-9dcc-bee4f7cd4243",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "dda207ab-0476-45c6-b2b6-6507aa8bee7c",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T02:31:06.7311862+00:00",
+    "LastUpdatedAt": "2025-11-20T04:06:51.5040624+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY30.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "e2342a95-c0e9-4399-9b4c-7e8e8fabebf6",
+        "Name": "Model Base case1500.390 SB.As Peak FY30.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "799c1002-d30a-4492-8c46-5c3289a4a919",
+    "ExecutionId": "eb707e6b-9612-433a-a79d-19361e2054d6",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "810e9769-f79a-4254-8e59-d3f6061208eb",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T05:10:01.5586998+00:00",
+    "LastUpdatedAt": "2025-11-20T07:05:20.7445176+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY29.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "96e80815-0bd2-4c34-a457-042a369dec2e",
+        "Name": "Model Base case1500.390 SB.As Peak FY29.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "531c597a-14d2-4e21-a366-da7b3914433c",
+    "ExecutionId": "c42e37e0-f681-4deb-866d-7c6738f880de",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "7e9db4d1-53b1-4ce7-b1e3-301db3aae98f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T09:52:38.7266563+00:00",
+    "LastUpdatedAt": "2025-11-20T11:38:43.8394914+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak.400 B FY29.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "9b9351e2-d750-4937-8d05-24b8481f8a04",
+        "Name": "Model Base case1500.390 SB.As Peak.400 B FY29.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "724c43b1-c866-46b6-9456-67415dada197",
+    "ExecutionId": "ed4f9d63-f4e5-494c-ba96-ef1a70f3a952",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "7e9db4d1-53b1-4ce7-b1e3-301db3aae98f",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-20T09:52:42.6625928+00:00",
+    "LastUpdatedAt": "2025-11-20T11:31:23.9377289+00:00",
+    "Models": [
+      "Base case1500.390 SB.As Peak FY29.36"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "7f01ae1d-03a1-4f66-bbce-eddebef5ce3d",
+        "Name": "Model Base case1500.390 SB.As Peak FY29.36 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "abe1039c-ebb1-443a-a43d-e679904adf77",
+    "ExecutionId": "cfa0f9ac-5ef3-4c01-9d1c-49aeeb6f209c",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "05742076-1c7c-40c4-a863-990adef8f62b",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-27T07:06:07.4450997+00:00",
+    "LastUpdatedAt": "2025-11-27T08:10:51.1642419+00:00",
+    "Models": [
+      "Base case1500.As Peak FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "853f3d7f-9dcb-44cc-8605-e99c5b8da4ab",
+        "Name": "Model Base case1500.As Peak FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "83d92abf-4ef5-4a47-b7a0-72518739412f",
+    "ExecutionId": "382a3e83-2f6e-4ef7-aba8-66f507722f80",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "7fadad05-d2c1-45b7-b688-e790f11b081b",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-27T10:48:11.604834+00:00",
+    "LastUpdatedAt": "2025-11-27T11:10:29.7734036+00:00",
+    "Models": [
+      "Base case1500. FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "b82d8cb8-fee4-49fb-ac91-9456c0795422",
+        "Name": "Model Base case1500. FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "040ed443-cf03-40b7-82cd-39ecb440645c",
+    "ExecutionId": "d36b3187-5cd2-4fb6-a830-2f3f65250c11",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "175f49a3-e3ac-40da-a5cd-0d21ccb93475",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-27T11:23:23.3475944+00:00",
+    "LastUpdatedAt": "2025-11-27T11:57:55.4634321+00:00",
+    "Models": [
+      "Base case1500. FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "8391142d-bde5-44ba-b594-c9317e9d3876",
+        "Name": "Model Base case1500. FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "5da8ee0f-81d6-4f1d-beba-cc26f37cb2ad",
+    "ExecutionId": "728c6749-2a04-4584-91c4-7bbc45024394",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "8af1a496-3094-499e-af5d-e3fd6575d271",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-12-03T11:36:45.3327048+00:00",
+    "LastUpdatedAt": "2025-12-03T16:04:31.8161207+00:00",
+    "Models": [
+      "Base case1500.charged BESS FY29.32"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "1fe5d18f-f8a9-4b2e-84cb-f2a450302bf5",
+        "Name": "Model Base case1500.charged BESS FY29.32 Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  },
+  {
+    "SimulationType": "None",
+    "Id": "fe1e46d0-57cc-465e-96c9-0bff55d0ba2d",
+    "ExecutionId": "45240202-3cd8-44da-acd7-d3005421e6df",
+    "StudyId": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "ChangeSetId": "98eda400-9be1-45c4-b09c-14fe38fbffdb",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-12-04T05:29:09.2010815+00:00",
+    "LastUpdatedAt": "2025-12-04T08:24:50.2401956+00:00",
+    "Models": [
+      "Base case1500.charged BESS FY29.32 no SB"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "ff9c3226-72f0-4b98-a6ee-6fa4904d6389",
+        "Name": "Model Base case1500.charged BESS FY29.32 no SB Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  }
+]
+Count: 10
+
+C:\Users\plexos>pxc study list
+Current user accessible  studies Count: 15
+[
+  {
+    "Id": "4e03c4c5-6149-4c0e-8377-95388cd12ad6",
+    "Name": "Oct-25 month ahead",
+    "Description": "Oct-25 month ahead description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-09-30T09:25:34.6854082Z",
+    "LastUpdatedAtUtc": "2025-09-30T09:25:38.5205456Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "81786c11-4aaf-49b7-ad64-d85cc55b0bf6",
+    "Name": "BRPL-Base_Model_Final",
+    "Description": "BRPL-Base_Model_Final description",
+    "Status": "Deactivated",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-01T12:38:47.0511331Z",
+    "LastUpdatedAtUtc": "2025-10-28T09:49:24.4305762Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "7a147fa1-40d4-4436-84d0-72d24aad285b",
+    "Name": "BRPL-Base_Model_08.10.25",
+    "Description": "BRPL-Base_Model_08.10.25 description",
+    "Status": "Deactivated",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-08T18:48:18.9984149Z",
+    "LastUpdatedAtUtc": "2025-10-28T09:49:13.1162787Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "dc26ec54-3be2-4a51-9c30-9dd6c5387ac8",
+    "Name": "Base_Model with RA capacity",
+    "Description": null,
+    "Status": "Deactivated",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-28T09:39:42.4553063Z",
+    "LastUpdatedAtUtc": "2025-10-28T09:49:00.6720871Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "700f2fb2-39c5-43ce-bf77-72e78bf79ae1",
+    "Name": "CEA",
+    "Description": "This Playbook helps PLEXOS users create Merit Order charts in Excel. It includes a sample study, an Excel workbook, and predefined output layouts. You can load generation and cost data from the Cloud Study using the Excel Add-In, and build a chart that shows the dispatch order by cost. ",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-28T10:22:11.2151906Z",
+    "LastUpdatedAtUtc": "2025-10-28T10:22:43.8509068Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "3319d949-549a-489a-973c-595b98b1c030",
+    "Name": "CEA RA capacity BRPL",
+    "Description": "CEA RA capacity BRPL description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-28T17:54:42.0637236Z",
+    "LastUpdatedAtUtc": "2025-10-28T17:54:52.5101811Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "ccfe91ff-8e8e-401a-8963-a12a35bd7a2b",
+    "Name": "BRPL Plexo \u0026 CEA comparison",
+    "Description": "BRPL Plexo \u0026 CEA comparison Description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-31T07:11:39.8855564Z",
+    "LastUpdatedAtUtc": "2025-11-18T09:11:37.4437868Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "2f4a3090-2016-45b7-8d74-b187136fd3de",
+    "Name": "BYPL_RA_Model",
+    "Description": "BYPL_RA_Model Description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-10-31T10:07:49.590579Z",
+    "LastUpdatedAtUtc": "2025-10-31T10:07:56.3624831Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "8dbc16de-0684-4ff9-98f3-ab4a93de3cef",
+    "Name": "Plexo RA 10 year ST run",
+    "Description": "Plexo RA 10 year ST run description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-11-08T01:31:44.8361432Z",
+    "LastUpdatedAtUtc": "2025-11-08T19:44:37.49375Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "d81f09b0-0079-48ad-b0b1-55c6e858d950",
+    "Name": "BRPL-medium term",
+    "Description": "BRPL-medium term Description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-11-12T13:11:14.5743285Z",
+    "LastUpdatedAtUtc": "2025-11-21T10:29:44.2832477Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "3fbdd034-4c82-4454-b93c-7ffd5b1a56fb",
+    "Name": "BRPL-Proposed S2",
+    "Description": "BRPL-Proposed S2 Description",
+    "Status": "New",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-11-18T09:04:13.0721206Z",
+    "LastUpdatedAtUtc": "2025-11-18T09:04:13.0721222Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "c0ca3b93-2f4e-4a42-ac5f-151a21e0ddd9",
+    "Name": "RA BRPL Proposed",
+    "Description": "RA BRPL Proposed description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-11-18T09:29:52.3196333Z",
+    "LastUpdatedAtUtc": "2025-11-18T09:34:04.8750337Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90",
+    "Name": "BRPL-Proposed S3",
+    "Description": "BRPL-Proposed S3 description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-11-19T07:21:31.5759488Z",
+    "LastUpdatedAtUtc": "2025-11-19T07:51:18.1983343Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "f7e3515d-a585-4c8e-a880-33ee36c450b9",
+    "Name": "Base12.10.25 new scenario",
+    "Description": "Base12.10.25 new scenario description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-11-19T19:02:20.8476702Z",
+    "LastUpdatedAtUtc": "2025-12-04T05:27:53.8646748Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  },
+  {
+    "Id": "206f4c16-e5cf-42c8-b8d2-fcf5f29c7474",
+    "Name": "Plexos_BRPL_datafile changed_sushant",
+    "Description": "Plexos_BRPL_datafile changed Description",
+    "Status": "Active",
+    "LastUpdateMessage": null,
+    "CreatedDate": "2025-12-01T11:32:42.8122083Z",
+    "LastUpdatedAtUtc": "2025-12-01T11:32:46.9115418Z",
+    "StudyType": "Plexos",
+    "isAccessibleToRequestingUser": true,
+    "createdByUserId": "3e31c95b-746b-4ac6-834e-98f24f804b4c",
+    "User": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    }
+  }
+]
+
+C:\Users\plexos>pxc simulation list "f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90"
+Specify --help for a list of available options and commands.
+Error: Unrecognized command or argument 'f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90'
+
+C:\Users\plexos>pxc simulation list --studyId "f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90"
+Using current context:
+StudyId : f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90
+[
+  {
+    "SimulationType": "None",
+    "Id": "256f0483-1e33-48ae-9f7b-82c9be0d0f87",
+    "ExecutionId": "2dc6549e-222f-4568-a72b-5d716a8a9dd6",
+    "StudyId": "f4cf9161-3eb7-46d6-aae1-04dfbb5a9f90",
+    "ChangeSetId": "ee274daa-3f96-4275-b35e-9457b0f1fbb2",
+    "CreatedByUser": {
+      "Name": "Sovendra Jha",
+      "EmailAddress": "sovendra.jha@reliancegroupindia.com",
+      "Id": "3e31c95b-746b-4ac6-834e-98f24f804b4c"
+    },
+    "Source": "CloudUI",
+    "RequestedCpuCores": 8,
+    "MinimumMemoryInGb": 64.00,
+    "CreatedAt": "2025-11-19T07:23:04.4371781+00:00",
+    "LastUpdatedAt": "2025-11-19T14:42:54.2408696+00:00",
+    "Models": [
+      "Proposed S3 - Full Horizon"
+    ],
+    "Status": "CompletedSuccess",
+    "ModelIdentifiers": [
+      {
+        "Id": "167b7f1e-997b-4ea2-be2c-130bcc83d07a",
+        "Name": "Model Proposed S3 - Full Horizon Solution"
+      }
+    ],
+    "SimulationEngine": {
+      "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+      "Version": "11.000.005.2508219",
+      "Name": "11.0 R05",
+      "EngineType": "Performance",
+      "OptimizationEngine": "Plexos"
+    },
+    "RetryCount": 0,
+    "Retries": [],
+    "ParallelizationOptions": null,
+    "Messages": null
+  }
+]
+Count: 1
+
+C:\Users\plexos>pxc simulation -?
+CloudCLI.Commands.Simulation.SimulationCommand
+
+Manage simulations
+
+Usage: plexos-cloud simulation [command] [options]
+
+Options:
+  -f|--format                  Output format(json | csv | tsv | yaml | table | none)
+                               Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                               Default value is: JSON.
+  -q|--quiet                   Turns off verbose messages from app
+  -aut|--automation            Turns on developer friendly structured response messages from app
+                               Allowed values are: None, PythonSDK.
+  -?|-h|--help                 Show help information.
+
+Commands:
+  build-request-from-previous  build simulation request based on previously ran simulation
+  cancel                       Cancel Simulation request
+  capability                   Manage capabilities
+  engine                       Manage engines
+  enqueue                      Using top-level command with --file option will enable enqueuing simulations from a JSON
+                               file. Subcommands (Early Access) manages enqueuing different types of simulations
+  list                         List simulations
+  monitor                      Monitor Simulations while they are running, i.e. in progress state
+  progress                     Check Simulation progress
+  run-group                    Runs the simulation group.
+
+Run 'simulation [command] -?|-h|--help' for more information about a command.
+
+
+C:\Users\plexos>pxc simulation progress
+Simulation Id is required
+Specify --help for a list of available options and commands.
+
+C:\Users\plexos>pxc simulation progress "256f0483-1e33-48ae-9f7b-82c9be0d0f87
+Specify --help for a list of available options and commands.
+Error: Unrecognized command or argument '256f0483-1e33-48ae-9f7b-82c9be0d0f87'
+
+C:\Users\plexos>pxc simulation progress "256f0483-1e33-48ae-9f7b-82c9be0d0f87"
+Specify --help for a list of available options and commands.
+Error: Unrecognized command or argument '256f0483-1e33-48ae-9f7b-82c9be0d0f87'
+
+C:\Users\plexos>pxc simulation progress SimulationId-- "256f0483-1e33-48ae-9f7b-82c9be0d0f87"
+Specify --help for a list of available options and commands.
+Error: Unrecognized command or argument 'SimulationId--'
+
+C:\Users\plexos>pxc simulation progress -?
+CloudCLI.Commands.Simulation.CheckSimmulationProgressCommand
+
+Check Simulation progress
+
+Usage: plexos-cloud simulation progress [options]
+
+Options:
+  -f|--format        Output format(json | csv | tsv | yaml | table | none)
+                     Allowed values are: JSON, JSONL, CSV, None, Table, TSV, YAML.
+                     Default value is: JSON.
+  -q|--quiet         Turns off verbose messages from app
+  -aut|--automation  Turns on developer friendly structured response messages from app
+                     Allowed values are: None, PythonSDK.
+  --simulationId     The simulation request Id to Check Current Proggress
+  -?|-h|--help       Show help information.

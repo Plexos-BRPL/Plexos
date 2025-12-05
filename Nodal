@@ -1,0 +1,67 @@
+{
+  "StudyId": "206f4c16-e5cf-42c8-b8d2-fcf5f29c7474",
+  "ChangeSetId": "0d72e7de-85ac-4611-aead-6b28372ddce9",
+  "Models": [
+    "Nodal"
+  ],
+  "SimulationOptions": {
+    "SupressSolutionWriting": false,
+    "BuildSelectedDataFiles": false,
+    "Locale": 1033,
+    "OutputFilters": [],
+    "CongestionInsights": {
+      "CacheCongestionInsightsData": false,
+      "ExportCachedParquet": false
+    },
+    "SimulationTasks": [],
+    "SolutionOptions": {
+      "ParquetSchemaVersion": 2,
+      "Name": null,
+      "Description": null,
+      "CreateParquetViewsDatabase": false
+    },
+    "EnableRealTimeLog": true,
+    "IsModelDistributionRun": false,
+    "SimulationRunType": 2,
+    "SnapshotOptions": {
+      "EnablePlexosSnapshots": false,
+      "EnablePlexosSolverSnapshots": null,
+      "PlexosSnapshotMonitorMinutes": null,
+      "EnableReReporting": false
+    },
+    "SolutionReportIds": []
+  },
+  "SimulationAffinity": null,
+  "ParallelizationOptions": null,
+  "SimulationData": [
+    {
+      "Uri": "https://studies-ind.energyexemplar.com/1.0/downloads/studies/206f4c16-e5cf-42c8-b8d2-fcf5f29c7474/changesets/0d72e7de-85ac-4611-aead-6b28372ddce9/input-data",
+      "Type": 0
+    },
+    {
+      "Uri": "https://studies-ind.energyexemplar.com/1.0/downloads/studies/206f4c16-e5cf-42c8-b8d2-fcf5f29c7474/changesets/0d72e7de-85ac-4611-aead-6b28372ddce9/timeseries-zip",
+      "Type": 4
+    }
+  ],
+  "SolutionData": [],
+  "DataConfiguration": null,
+  "SimulationEngine": {
+    "EngineId": "a9b9d27b-4a64-45fa-ba75-552d1a4b7161",
+    "Version": "11.000.005.2508219",
+    "Name": "11.0 R05",
+    "EngineType": "Performance",
+    "OperatingSystem": 1,
+    "OptimizationEngine": 0
+  },
+  "Tags": null,
+  "Source": "CloudUI",
+  "Priority": 1,
+  "RequestedCpuCores": 8,
+  "MinimumMemoryInGb": 64.00,
+  "RunParameters": [],
+  "RequestedInstanceType": null,
+  "SimulationType": "None",
+  "SimulationGroupId": null,
+  "VMInstanceProperties": null,
+  "Description": null
+}
