@@ -125,7 +125,7 @@ class SimulationWorkflowManager:
         Downloads the simulation request (.txt) file associated with a historical simulation ID.
         Rationale: The downloaded request file is the input needed to create a *new* simulation run (enqueue).
         """
-        date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+        date_str = datetime.now().strftime("%Y_%m_%d")
         file_name = f"{study_id}_{model_name}_{date_str}.txt"
         print(f"  Attempting to download Simulation ID: {simulation_id} as '{file_name}'...")
 
@@ -133,7 +133,7 @@ class SimulationWorkflowManager:
             simulation_id=simulation_id,
             output_directory=str(self.DOWNLOAD_OUTPUT_FOLDER),
             file_name=file_name,
-            overwrite=True,
+            #overwrite=True,
             study_id=study_id,
             model_name=model_name,
             print_message=False
@@ -157,7 +157,7 @@ class SimulationWorkflowManager:
         print("="*50)
 
         # 1. Prepare Dated Backup Folder
-        today_date = datetime.now().strftime("%Y%m%d")
+        today_date = datetime.now().strftime("%Y_%m_%d")
         backup_folder_name = f"Simulation_Backup_{today_date}"
         backup_path = self.BACKUP_BASE_FOLDER / backup_folder_name
         backup_path.mkdir(parents=True, exist_ok=True)
@@ -214,7 +214,7 @@ class SimulationWorkflowManager:
             solution_id=solution_id,
             output_directory=str(sim_output_dir),
             solution_type=solution_type,
-            overwrite=True,
+            #overwrite=True,
             create_directory=True,
             print_message=False
         )
